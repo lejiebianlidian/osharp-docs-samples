@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
-using Liuliu.Blogs.Blogs.Entities;
 using OSharp.Entity;
-using OSharp.Mapping;
 
 namespace Liuliu.Blogs.Blogs.Dtos
 {
     /// <summary>
-    /// 输入DTO：博客信息
+    /// 输入DTO：审核博客信息
     /// </summary>
-    [MapTo(typeof(Blog))]
-    public class BlogInputDto : IInputDto<int>
+    public class BlogVerifyDto : IInputDto<int>
     {
         /// <summary>
         /// 获取或设置 博客编号
@@ -20,15 +17,14 @@ namespace Liuliu.Blogs.Blogs.Dtos
         public int Id { get; set; }
 
         /// <summary>
-        /// 获取或设置 博客地址
+        /// 获取或设置 是否开通
         /// </summary>
-        [Required]
-        public string Url { get; set; }
+        public bool IsEnabled { get; set; }
 
         /// <summary>
-        /// 获取或设置 显示名称
+        /// 获取或设置 审核理由
         /// </summary>
         [Required]
-        public string Display { get; set; }
+        public string Reason { get; set; }
     }
 }

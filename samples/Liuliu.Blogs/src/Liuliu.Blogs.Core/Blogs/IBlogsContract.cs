@@ -40,10 +40,9 @@ namespace Liuliu.Blogs.Blogs
         /// <summary>
         /// 审核博客信息
         /// </summary>
-        /// <param name="id">博客编号</param>
-        /// <param name="isEnabled">是否通过</param>
+        /// <param name="dto">审核博客信息DTO信息</param>
         /// <returns>业务操作结果</returns>
-        Task<OperationResult> VerifyBlog(int id, bool isEnabled);
+        Task<OperationResult> VerifyBlog(BlogVerifyDto dto);
 
         /// <summary>
         /// 更新博客信息
@@ -51,13 +50,6 @@ namespace Liuliu.Blogs.Blogs
         /// <param name="dtos">包含更新信息的博客信息DTO信息</param>
         /// <returns>业务操作结果</returns>
         Task<OperationResult> UpdateBlogs(params BlogInputDto[] dtos);
-
-        /// <summary>
-        /// 删除博客信息
-        /// </summary>
-        /// <param name="ids">要删除的博客信息编号</param>
-        /// <returns>业务操作结果</returns>
-        Task<OperationResult> DeleteBlogs(params int[] ids);
 
         #endregion
 
